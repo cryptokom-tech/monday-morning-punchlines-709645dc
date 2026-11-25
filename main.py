@@ -27,6 +27,8 @@ def validate(joke: str) -> None:
         raise ValueError(f"joke must be {MIN_CHARS}-{MAX_CHARS} chars, got {len(joke)}")
     if "\n" in joke or "\r" in joke:
         raise ValueError("joke must be a single line")
+    if "Monday" not in joke:
+        raise ValueError("joke must be about Monday morning")
 
 
 def main() -> int:
